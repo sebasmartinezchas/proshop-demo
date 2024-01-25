@@ -45,6 +45,15 @@ const RegisterScreen = () => {
     <FormContainer>
       <h1>Sign Up</h1>
       <Form onSubmit={submitHandler}>
+      <Form.Group controlId="name" className="my-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
         <Form.Group controlId="email" className="my-3">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -55,12 +64,21 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="password" className="my-3">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>Enter Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId="confirmPassword" className="my-3">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="confirmPassword"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
         <Button
@@ -75,9 +93,9 @@ const RegisterScreen = () => {
       </Form>
       <Row className="py-3">
         <Col>
-          New Customer?{" "}
-          <Link to={redirect ? `/redirect?redirect=${redirect}` : "/register"}>
-            Register
+          Already have an account?{" "}
+          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+            Login
           </Link>
         </Col>
       </Row>

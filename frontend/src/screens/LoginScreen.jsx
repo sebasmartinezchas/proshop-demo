@@ -49,7 +49,7 @@ const LoginScren = () => {
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="password" className="my-3">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>Enter Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter Password"
@@ -64,7 +64,7 @@ const LoginScren = () => {
       </Form>
       <Row className="py-3">
         <Col>
-          New Customer? <Link to={redirect ? `/redirect?redirect=${redirect}`: '/register'}>Register</Link>
+          New Customer? <Link to={redirect ? `/register?redirect=${redirect}`: '/register'}>Register</Link>
         </Col>
       </Row>
     </FormContainer>
